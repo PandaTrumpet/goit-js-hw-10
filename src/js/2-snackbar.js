@@ -25,28 +25,30 @@ const myPromise = new Promise((resolve, reject) => {
 
 function hadlerSuccess() {
   let delay = delayInput.value;
-  iziToast.success({
-    title: 'ok',
+  iziToast.show({
+    // title: 'ok',
     titleColor: '#fff',
     messageColor: '#fff',
-    message: `Fulfilled promise in ${delay}ms`,
+    message: ` ✅ Fulfilled promise in ${delay}ms`,
     closeOnEscape: true,
     position: 'topRight',
     backgroundColor: '#59a10d',
+   
   });
 }
 
 function hadlerError() {
     
   let delay = delayInput.value;
-  iziToast.error({
-    title: 'ok',
+  iziToast.show({
+    // title: 'ok',
     titleColor: '#fff',
     messageColor: '#fff',
-    message: `Error promise in ${delay}ms`,
+    message: `❌  Rejected promise in ${delay}ms`,
     closeOnEscape: true,
     position: 'topRight',
-    backgroundColor: '#59a10d',
+    backgroundColor: '#ef4040',
+   
   });
 }
 
