@@ -1,12 +1,6 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
 body {
-  font-family: "Montserrat", sans-serif ;
+  font-family: 'Montserrat', sans-serif;
 }
 .timer {
   display: flex;
@@ -46,7 +40,7 @@ body {
   height: 40px;
   padding-left: 12px;
   outline-offset: 4px;
-    outline-color: transparent;
+  outline-color: transparent;
 }
 #datetime-picker:hover {
   border: 1px solid #000;
@@ -54,7 +48,7 @@ body {
 #datetime-picker:active {
   border: 1px solid #4e75ff;
 }
-#datetime-picker:disabled{
+#datetime-picker:disabled {
   border: 1px solid #808080;
 }
 
@@ -80,7 +74,6 @@ body {
   color: #989898;
 }
 
-
 /* Snackbar */
 
 .input-form {
@@ -88,69 +81,67 @@ body {
   flex-direction: column;
   gap: 8px;
   font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-letter-spacing: 0.04em;
-color: #2e2f42;
-margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 16px;
 }
 
 .input-text {
   border: 1px solid #808080;
-border-radius: 4px;
-width: 360px;
-height: 40px;
-outline-offset: 4px;
-outline-color: transparent;
-font-weight: 400;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #2e2f42;
-padding-left: 16px;
-transition: border-color 300ms ease-in-out;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  outline-offset: 4px;
+  outline-color: transparent;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  padding-left: 16px;
+  transition: border-color 300ms ease-in-out;
 }
 .input-text:hover {
   border-color: #000;
 }
 .input-text:active {
-  border-color:  #4e75ff;
-
+  border-color: #4e75ff;
 }
 .btn {
   margin-top: 24px;
   border-radius: 8px;
-padding: 8px 16px;
-width: 360px;
-background: #4e75ff;
-font-weight: 500;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #fff;
-transition: background 300ms ease-in-out;
+  padding: 8px 16px;
+  width: 360px;
+  background: #4e75ff;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: background 300ms ease-in-out;
 }
 .btn:hover {
   background: #6c8cff;
 }
 
 .field-title {
- 
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #2e2f42;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
 }
 .field-form {
   width: 360px;
   border-radius: 4px;
   border-width: 1px;
-border-color: #808080;
-transition: border-color 300ms ease-in-out;
-margin-left: 0;
-margin-right: 0;
-display: flex;
-justify-content:center;
-gap: 48px;
-/* padding: 0; */
-/* padding-bottom: 8px;
+  border-color: #808080;
+  transition: border-color 300ms ease-in-out;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  /* padding: 0; */
+  /* padding-bottom: 8px;
 padding-top: 24px;
 padding-left: 20px; */
 }
@@ -159,8 +150,7 @@ padding-left: 20px; */
 .field-form:active {
   border-color: #000;
 }
-.radio-label
-.radio-label {
+.radio-label .radio-label {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
