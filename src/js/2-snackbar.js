@@ -47,7 +47,7 @@ function hadlerError() {
     message: `❌  Rejected promise in ${delay}ms`,
     closeOnEscape: true,
     position: 'topRight',
-    backgroundColor: '#ef4040',
+    backgroundColor: '#ed6f7c',
    
   });
 }
@@ -55,7 +55,7 @@ function hadlerError() {
 form.addEventListener('submit', mainFunk);
 
 
-
+  
 
 
 
