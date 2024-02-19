@@ -74,6 +74,10 @@ body {
   color: #989898;
 }
 
+.btn:disabled:hover {
+  color: #989898;
+  background: #cfcfcf;
+}
 /* Snackbar */
 
 .input-form {

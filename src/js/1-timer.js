@@ -10,6 +10,8 @@ const startButton = document.querySelector('[data-start]');
 const input = document.querySelector('#datetime-picker');
 const clock = document.querySelectorAll('.value');
 
+startButton.disabled = true;
+
 let userSelectedDate = null;
 let timerInterval;
 
@@ -22,18 +24,30 @@ function updateTime() {
     clock.forEach(div => (div.textContent = '00'));
     return;
   }
+  const daysTime = document.querySelector('[data-days]');
+  const hoursTime = document.querySelector('[data-hours]');
+  const minutesTime = document.querySelector('[data-minutes]');
+  const secondsTime = document.querySelector('[data-seconds]');
+  const { days, hours, minutes, seconds } = convertMs(timeDiff);
 
-  const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+  daysTime.textContent = days.toString().padStart(2, '0');
+  hoursTime.textContent = hours.toString().padStart(2, '0');
+  minutesTime.textContent = minutes.toString().padStart(2, '0');
+  secondsTime.textContent = seconds.toString().padStart(2, '0');
+}
 
-  clock[0].textContent = days.toString().padStart(2, '0');
-  clock[1].textContent = hours.toString().padStart(2, '0');
-  clock[2].textContent = minutes.toString().padStart(2, '0');
-  clock[3].textContent = seconds.toString().padStart(2, '0');
+function convertMs(ms) {
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  const days = Math.floor(ms / day);
+  const hours = Math.floor((ms % day) / hour);
+  const minutes = Math.floor(((ms % day) % hour) / minute);
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+  return { days, hours, minutes, seconds };
 }
 
 const options = {
@@ -46,6 +60,7 @@ const options = {
     validateSelectedDate();
   },
 };
+
 const userTime = flatpickr('#datetime-picker', options);
 
 function validateSelectedDate() {
@@ -65,6 +80,8 @@ function validateSelectedDate() {
 
 class Timer {
   start() {
+    startButton.disabled = true;
+    input.disabled = true;
     timerInterval = setInterval(updateTime, 1000);
   }
 }

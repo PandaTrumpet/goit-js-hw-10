@@ -9,7 +9,7 @@ function mainFunk(event) {
   event.preventDefault();
 
   const myPromise = new Promise((resolve, reject) => {
-    const delay = Number(delayInput.value)
+    const delay = Number(delayInput.value);
     setTimeout(() => {
       const stateInput = document.querySelector('input[name="state"]:checked');
       if (stateInput && stateInput.value === 'fulfilled') {
@@ -20,11 +20,12 @@ function mainFunk(event) {
     }, delay);
   });
 
-  myPromise.then((result) => hadlerSuccess(result)).catch((error) => hadlerError(error));
+  myPromise
+    .then(result => hadlerSuccess(result))
+    .catch(error => hadlerError(error));
 }
 
 function hadlerSuccess(delay) {
-  
   iziToast.show({
     titleColor: '#fff',
     messageColor: '#fff',
@@ -36,7 +37,6 @@ function hadlerSuccess(delay) {
 }
 
 function hadlerError(delay) {
-  
   iziToast.show({
     titleColor: '#fff',
     messageColor: '#fff',
