@@ -9,21 +9,22 @@ function mainFunk(event) {
   event.preventDefault();
 
   const myPromise = new Promise((resolve, reject) => {
+    const delay = Number(delayInput.value)
     setTimeout(() => {
       const stateInput = document.querySelector('input[name="state"]:checked');
       if (stateInput && stateInput.value === 'fulfilled') {
-        resolve();
+        resolve(delay);
       } else {
-        reject();
+        reject(delay);
       }
-    }, delayInput.value);
+    }, delay);
   });
 
-  myPromise.then(() => hadlerSuccess()).catch(() => hadlerError());
+  myPromise.then((result) => hadlerSuccess(result)).catch((error) => hadlerError(error));
 }
 
-function hadlerSuccess() {
-  let delay = delayInput.value;
+function hadlerSuccess(delay) {
+  
   iziToast.show({
     titleColor: '#fff',
     messageColor: '#fff',
@@ -34,8 +35,8 @@ function hadlerSuccess() {
   });
 }
 
-function hadlerError() {
-  let delay = delayInput.value;
+function hadlerError(delay) {
+  
   iziToast.show({
     titleColor: '#fff',
     messageColor: '#fff',
